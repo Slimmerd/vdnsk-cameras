@@ -10,7 +10,6 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                При поддержке{' '}
                 <span className={styles.logo}>
             <Image src="/logo.svg" alt="Microel Logo" width={152} height={36} />
           </span>

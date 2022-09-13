@@ -37,6 +37,10 @@
   color: #0070f3;
 }
 
+.image {
+  margin-bottom: 1rem;
+}
+
 .title a:hover,
 .title a:focus,
 .title a:active {
@@ -113,6 +117,10 @@
 }
 
 @media (max-width: 742px) {
+  .title {
+    font-size: 3rem;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;

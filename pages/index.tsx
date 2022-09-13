@@ -3,6 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Footer from "../components/nav/footer";
 import CameraCard from "../components/camera/cameraCard";
+import Image from "next/image";
+import React from "react";
 
 const Home: NextPage = () => {
     return (
@@ -14,6 +16,14 @@ const Home: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
+
+                <a className={styles.image}
+                   href="https://vdonsk.ru/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >
+                    <Image src="/logo.svg" alt="Microel Logo" width={292} height={56}/>
+                </a>
                 <h1 className={styles.title}>
                     Камеры города <p className={styles.title}>Волгодонск</p>
                 </h1>
