@@ -5,6 +5,7 @@ import Footer from "../components/nav/footer";
 import CameraCard from "../components/camera/cameraCard";
 import Image from "next/image";
 import React from "react";
+import {cameras} from "../utils/cameras";
 
 const Home: NextPage = () => {
     return (
@@ -33,10 +34,26 @@ const Home: NextPage = () => {
                 </p>
 
                 <div className={styles.grid}>
-                    <CameraCard link={'/camera/1'} cameraID={'1'} cameraStreet={'Проспект Курчатова'}/>
-                    <CameraCard link={'/camera/2'} cameraID={'2'} cameraStreet={'Мирный атом'}/>
-                    <CameraCard link={'/camera/3'} cameraID={'3'} cameraStreet={'Вкусно и Точка'}/>
-                    <CameraCard link={'/camera/4'} cameraID={'4'} cameraStreet={'Проспект Строителей'}/>
+                    {cameras.map((camera,i) => <CameraCard link={'/camera/' + (i+1)} cameraID={`${i+1}`} cameraStreet={camera.street} key={i}/>)}
+                    {/*<CameraCard link={'/camera/1'} cameraID={'1'} cameraStreet={'Проспект Курчатова'}/>*/}
+                    {/*<CameraCard link={'/camera/2'} cameraID={'2'} cameraStreet={'Мирный атом'}/>*/}
+                    {/*<CameraCard link={'/camera/3'} cameraID={'3'} cameraStreet={'Вкусно и Точка'}/>*/}
+                    {/*<CameraCard link={'/camera/4'} cameraID={'4'} cameraStreet={'Проспект Строителей'}/>*/}
+                    {/**/}
+                    {/*<CameraCard link={'/camera/1'} cameraID={'1'} cameraStreet={'Проспект Курчатова'}/>*/}
+                    {/*<CameraCard link={'/camera/2'} cameraID={'2'} cameraStreet={'Мирный атом'}/>*/}
+                    {/*<CameraCard link={'/camera/3'} cameraID={'3'} cameraStreet={'Вкусно и Точка'}/>*/}
+                    {/*<CameraCard link={'/camera/4'} cameraID={'4'} cameraStreet={'Проспект Строителей'}/>*/}
+                    {/**/}
+                    {/*<CameraCard link={'/camera/1'} cameraID={'1'} cameraStreet={'Проспект Курчатова'}/>*/}
+                    {/*<CameraCard link={'/camera/2'} cameraID={'2'} cameraStreet={'Мирный атом'}/>*/}
+                    {/*<CameraCard link={'/camera/3'} cameraID={'3'} cameraStreet={'Вкусно и Точка'}/>*/}
+                    {/*<CameraCard link={'/camera/4'} cameraID={'4'} cameraStreet={'Проспект Строителей'}/>*/}
+                    {/**/}
+                    {/*<CameraCard link={'/camera/1'} cameraID={'1'} cameraStreet={'Проспект Курчатова'}/>*/}
+                    {/*<CameraCard link={'/camera/2'} cameraID={'2'} cameraStreet={'Мирный атом'}/>*/}
+                    {/*<CameraCard link={'/camera/3'} cameraID={'3'} cameraStreet={'Вкусно и Точка'}/>*/}
+                    {/*<CameraCard link={'/camera/4'} cameraID={'4'} cameraStreet={'Проспект Строителей'}/>*/}
                 </div>
             </main>
 
