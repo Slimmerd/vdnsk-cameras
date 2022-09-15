@@ -1,0 +1,23 @@
+.heading {
+    font-size: 1rem;
+}
+
+.watchButton {
+    width: 100%;
+    padding: 0.5rem;
+
+    cursor: pointer;
+    text-decoration: none;
+    background-color: white;
+
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.watchButton:hover,
+.watchButton:focus,
+.watchButton:active {
+    color: #0070f3;
+    border-color: #0070f3;
+}

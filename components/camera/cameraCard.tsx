@@ -4,16 +4,14 @@ import Link from "next/link";
 
 type CameraCardT = {
     link: string;
-    cameraID: string;
     cameraStreet: string;
 }
 
-const CameraCard: React.FC<CameraCardT> = ({link, cameraID, cameraStreet}) => {
+const CameraCard: React.FC<CameraCardT> = ({link, cameraStreet}) => {
     return (
         <Link href={link} prefetch={false}>
             <a className={styles.card}>
-                <h2>Камера {cameraID} &rarr;</h2>
-                <p>{cameraStreet}</p>
+                <h2>{cameraStreet} &rarr;</h2>
             </a>
         </Link>
     );
