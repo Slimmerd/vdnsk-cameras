@@ -20,9 +20,9 @@ const Map = () => {
 
     return (
         <div style={{ height: "450px", width: "100%" }}>
-            <MapContainer style={{ height: "450px", width: "100%" }} center={[position[0], position[1]]} zoom={13} scrollWheelZoom={false}>
+            <MapContainer style={{ height: "450px", width: "100%" }} center={[position[0], position[1]]} zoom={13} scrollWheelZoom={false} attributionControl={false}>
                 <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution='<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {cameras.map((camera, i) => <Marker position={[camera.coordinates[0], camera.coordinates[1]]} key={i}>
