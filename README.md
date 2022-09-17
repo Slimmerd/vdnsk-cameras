@@ -1,34 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Контент
+- [База](#База)
+- [Тестирование](#Тестирование)
+- [Развертывание](#Развертывание)
+    * [Обычный](#Обычный)
+    * [Статический](#Статический)
+- [Добавление новых камер](#Добавление-новых-камер)
+    + [Где:](#Где:)
+- [Добавление новых картинок](#Добавление-новых-картинок)
+- [Изменения стилей](#Изменения-стилей)
+    * [Нужно изменить затемнение картинки карточек](#Нужно-изменить-затемнение-картинки-карточек)
 
-## Getting Started
+## База
 
-First, run the development server:
+Сайт написан на Next.js вся информация по нему есть здесь:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 
+## Тестирование
+
+Запуск:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+Просмотр будет доступен по адресу: [http://localhost:3000](http://localhost:3000)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Развертывание
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Обычный
+Вам нужно собрать сборку для этого запустите команду `yarn build` или `npm run build`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Запустить готовый сервер с этой сборкой `yarn start` или `npm run start`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Статический
+Подразумевает экспорт HTML и CSS
 
-## Learn More
+Подробнее описано тут:
+- https://nextjs.org/docs/advanced-features/static-html-export
+- https://blog.logrocket.com/understanding-static-html-export-next-js/
 
-To learn more about Next.js, take a look at the following resources:
+> В package.json уже прописан скрипт для этого вам достаточно написать `yarn build:static` или `npm run build:static`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Добавление новых камер
+Добавлять новые камеры нужно в файле расположенном в `utils/cameras.ts`
 
-## Deploy on Vercel
+В конец массива `cameras` нужно добавить объект данного формата:
+```
+{
+street: 'Набережная 2',
+url: 'https://cam.vdonsk.ru/embed/s.9c13c89472520aef38e8ae03e25af9650583f6ff1',
+coordinates: [47.542799, 42.1856008],
+imageFile: 'camera21.webp'
+},
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Где:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`street` - Название улицы или камеры (будет отображаться на главной и на странице с камерой)
+
+`url` - Ссылка на плеер камеры, находиться внутри iframe, который экспортируется из вашего плеера
+
+`coordinates` - Координаты места нахождения камеры (можно брать например из Яндекс Карт)
+
+`imageFile` - Название картинки + формат ее
+
+
+## Добавление новых картинок
+> РЕКОМЕНДУЮ! Добавлять картинки в формате webp
+
+Папка куда нужно добавлять картинки называется `public`
+
+> Рекомендую придерживаться стиля названия картинок в формате `camera[Номер камеры].формат`
+
+
+## Изменения стилей
+> Большинство стилей находится в папке `styles`
+
+Home.module.css - стиль главной страницы, включает себя также стиль карточек
+
+Map.module.css - стиль карты на главной странице
+
+Camera.module.css - стиль страницы камеры с плеером
+
+### Нужно изменить затемнение картинки карточек
+Файл `components/main/camera/CameraCard.tsx` в нем на 14 строчке можно изменить затемнение, где первая часть отвечает за верх, а вторая за низ.
+
+`linear-gradient(rgba(0, 0, 0, 0.75) - верх, rgba(0, 0, 0, 0.1) - низ)`

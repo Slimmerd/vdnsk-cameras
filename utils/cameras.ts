@@ -1,4 +1,11 @@
-export const cameras = [
+type Camera = {
+    street: string;
+    url: string;
+    coordinates: [number, number];
+    imageFile: string
+}
+
+export const cameras: Camera[] = [
     {
         street: 'Курчатова 11',
         url: 'https://cam.vdonsk.ru/embed/s.c83c02ba40f240b29e06f09f89fdd514820db7911',
