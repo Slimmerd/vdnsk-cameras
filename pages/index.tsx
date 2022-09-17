@@ -1,14 +1,14 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Footer from "../components/nav/footer";
-import CameraCard from "../components/camera/cameraCard";
+import Footer from "../components/nav/Footer";
+import CameraCard from "../components/main/camera/CameraCard";
 import Image from "next/image";
 import React from "react";
 import {cameras} from "../utils/cameras";
 import dynamic from "next/dynamic";
 const Map = dynamic(
-    () => import('../components/map'),
+    () => import('../components/main/MapWidget'),
     { ssr: false }
 )
 
@@ -38,6 +38,7 @@ const Home: NextPage = () => {
                 <div className={styles.grid}>
                     {cameras.map((camera, i) => <CameraCard
                         link={'/camera/' + (i + 1)}
+                        imageFile={camera.imageFile}
                         cameraStreet={camera.street}
                         key={i}/>)}
                 </div>
