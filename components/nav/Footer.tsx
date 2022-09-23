@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "../../styles/Home.module.css";
-import Image from "next/image";
 
 const Footer = () => {
     return (
@@ -11,7 +10,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
             >
                 <span className={styles.logo}>
-            <Image src="/logo.svg" alt="Microel Logo" width={152} height={36} />
+            <img src="/logo.svg" alt="Microel Logo" width={152} height={36} />
           </span>
             </a>
         </footer>

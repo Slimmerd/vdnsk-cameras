@@ -3,13 +3,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Footer from "../components/nav/Footer";
 import CameraCard from "../components/main/camera/CameraCard";
-import Image from "next/image";
 import React from "react";
 import {cameras} from "../utils/cameras";
 import dynamic from "next/dynamic";
+
 const Map = dynamic(
     () => import('../components/main/MapWidget'),
-    { ssr: false }
+    {ssr: false}
 )
 
 const Home: NextPage = () => {
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
                    target="_blank"
                    rel="noopener noreferrer"
                 >
-                    <Image src="/logo.svg" alt="Microel Logo" width={292} height={56}/>
+                    <img src="/logo.svg" alt="Microel Logo" width={292} height={56}/>
                 </a>
                 <h1 className={styles.title}>
                     Камеры города <p className={styles.title}>Волгодонск</p>

@@ -11,7 +11,7 @@ type CameraCardT = {
 const CameraCard: React.FC<CameraCardT> = ({link, cameraStreet, imageFile}) => {
     return (
         <Link href={link} prefetch={false}>
-            <a className={styles.card} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1)), url('/${imageFile}')`}}>
+            <a className={styles.card} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1)), url("/${imageFile}")`}}>
                 <h2>{cameraStreet} &rarr;</h2>
             </a>
         </Link>

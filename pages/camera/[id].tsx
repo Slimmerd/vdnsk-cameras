@@ -38,10 +38,7 @@ const CameraPage = () => {
                         allowFullScreen>
                     </iframe>
                 </div>
-
-
             </div>
-
             <Footer/>
         </div>
     );
